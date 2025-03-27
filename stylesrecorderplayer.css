@@ -1,0 +1,152 @@
+/* BLN ABC 0.9 (beta) A Primer for basic literacy development | Ein "Vorkurs" zur Alphabetisierung in Deutsch als Zweitsprache
+ * Copyright (C) 2025 Jens Kreitmeyer <self@jenskreitmeyer.de>
+ * This file is part of BLN ABC
+ * (for the full length copyright notice see the HTML index file and "COPYING.txt")
+ */
+/* ##STYLES RECPLAY## PART OF BLN ABC "STRESSTEST#04" (QUIZ) // 27-MAR-25 */
+
+
+
+:root {
+/* DEBUG BOXES (RECPLAY OVERLAY) */
+	--DBborder: 0px;
+}
+
+
+
+
+
+/* ------------------------------- CONTAINERS RECPLAY ------------------------------- */
+
+/* CONTAINER SEGMENTS//ALIGN BOTTOM */
+/* SHRINK TO FIT TO AVOID OVERLAP WITH TOUCH-FUNCTIONS */
+.modulerecorderplayer {
+	position: fixed; /*absolute;*/
+	bottom: 0;
+	display: flex;
+	flex-direction: column;
+	width: 100vw;
+	border-color: red;
+	border-style: dotted;
+	border-width: var(--DBborder); /* !!"ROOT" IN "STYLESTOUCHRENDER" */
+}
+
+/* "SUB-MODULES" */
+.segment-speak {
+	display: flex;
+	/* flex-direction: row; */
+	width: 100vw;
+	height: 20vw;
+	border-color: cyan;
+	border-style: dashed;
+	border-width: var(--DBborder);
+}
+.segment-listen {
+	display: flex;
+	/* flex-direction: row; */
+	width: 100vw;
+	height: 20vw;
+	border-color: lime;
+	border-style: dashed;
+	border-width: var(--DBborder);
+}
+.segment-control {
+	display: flex;
+	/* flex-direction: row; */
+	width: 100vw;
+	height: 20vw;
+	border-color: orange;
+	border-style: dashed;
+	border-width: var(--DBborder);
+}
+.btnunit {
+	width: 20vw;
+	height: 20vw;
+}
+
+
+
+
+/* ---------------------------------- RECORDING WIDGETS ---------------------------------- */
+
+	 	/* MAX WIDTH PROGRESS/LEVEL BAR */
+	 	/* (RECORDING/PLAYBACK RECORDING/PLAY TEMPLATE) */
+
+/* WAS (PARENT) "TRACK-CONTAINER" */
+.audiotemplatecontainer {
+	display: flex;
+	flex-direction: row;
+	width: 80vw;
+	border-color: gray;
+	border-style: dashed;
+	border-width: var(--DBborder);
+	border: 0px dashed gray;
+}
+
+
+
+/* WAS (PARENT) "TRACK-CONTAINER" */
+/* FOR 2 ELEMS "LEVEL" AND "BTN" */
+.inputlevelcontainer {
+/* 
+	display: flex;
+	flex-direction: row;
+ */
+	width: 80vw;
+	border-color: gray;
+	border-style: dashed;
+	border-width: var(--DBborder);
+	border: 0px dashed gray;
+}
+
+
+/* NEW ADDITIONAL CONTAINER */
+/* FOR 2 ELEMS "TRACK" AND "BTN" */
+.recscrubbercontainer {
+/* 
+	display: flex;
+	flex-direction: row;
+ */
+	width: 80vw;
+	border-color: gray;
+	border-style: dashed;
+	border-width: var(--DBborder);
+	border: 0px dashed gray;
+}
+
+		/* LIVE INPUT LEVEL (YELLOW BAR) */
+/* WAS "RECORDING-LEVEL" */
+.inputlevelbar {
+	background-color: rgba(255 255 0 / 1);
+	border-radius: 10vw;
+	width: 50%;
+	height: 20vw;
+}
+
+		/* OUTPUT TRACK (GREEN BAR) */
+/* WAS "PLAYBACK-TRACK" */
+.recscrubberbar {
+	background-color: rgba(100 255 100 / .8);
+	border-radius: 10vw;
+	width: 75%; 																						/* ###TBD### SET WIDTH-TO-TIME BY SCRIPT */
+	height: 20vw;
+}
+
+
+
+
+/* ------------------------------------ TEMPLATE WIDGETS --------------------------------- */
+		/* PROMPT (BLUE BAR) */
+.audiotemplatetrack {
+	background-color: rgba(100 100 255 / .8);
+	border-radius: 10vw;
+	width: 35%; 																						/* ###TBD### SET WIDTH-TO-TIME BY SCRIPT */
+	height: 20vw;
+}
+
+
+
+
+
+
+

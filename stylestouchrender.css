@@ -1,0 +1,390 @@
+/* BLN ABC 0.9 (beta) A Primer for basic literacy development | Ein "Vorkurs" zur Alphabetisierung in Deutsch als Zweitsprache
+ * Copyright (C) 2025 Jens Kreitmeyer <self@jenskreitmeyer.de>
+ * This file is part of BLN ABC
+ * (for the full length copyright notice see the HTML index file and "COPYING.txt")
+ */
+/* ##STYLES_TOUCHRENDER## PART OF BLN ABC "STRESSTEST#04" (QUIZ) // 27-MAR-25 */
+
+/* ANIMATION @LINE ##347## */
+/* DEBUGGING VIEWPORT/FULLSCREEN ON MOBILE UN-DO CHANGE CSS 
+		@LINE ##73## BACK TO VH/VW FROM PERCENT */
+/* CRAWLER_ELEMENTS (STROKE) SET TO TRANSPARENT */ 
+/* TYPELINES CHANGED TO SINGLE COLOR/TWO SHADES */
+
+
+
+																				  /* RENDER BASE */
+		/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+:root {
+     																/* INTERACTIVE PARAMETERS */
+	--tolerance:    	00;    /* #TBD# AMOUNT CRAWLER-TRACK WIDER STROKEWEIGHT */
+	--strokeweight: 	00;    /* TEMPLATE AND ANIMATION (UNITLESS) // FROM RENDER_TEMPLATE @LINE ##172## */
+	--traceweight:  	00;    /* UNSCALED // STROKE TRACE PRESERVES INITIAL WEIGHT */
+
+     																/* ORIENTATION PORT/LAND */
+	 /* =================================================
+      FLIP HEIGHT/WIDTH FOR PAGE ORIENTATION
+      #DEFAULT# PORTRAIT HEIGHT = (DEVICE)HEIGHT
+      #ROTATED# LANDSCAPE HEIGHT = (DEVIVE)WIDTH
+      INITIAL (??)FONT #SCALING# IS FOR (??)BOTH LAND/PORT // #REVIEW#
+      == FIT #LARGEST MEMBER# TO WIDTH OF ORIENTATION
+      ================================================= */
+/* DEFAULT/INIT = PORT */
+	--layerHeight: 		100%; /* 100vh; */ /* #COMPUTED# PORT=#VH# LAND =#VW# */
+	--angle: 					0deg; 						 /* #COMPUTED# PORT=0DEG LAND=90DEG */
+
+     																/* COLORS */
+/* RULERS */
+/* TOP/BTM */
+	--edgecol:				rgba(0 255 0 / 0.25); /* #CYAN# (0 255 255 / 0.25) */
+/* BASE */
+	--basecol:				rgba(0 255 255 / 0.25); /* #GREEN# (0 255 0 / 0.25) */
+/* X/CAP */
+	--rulerlinecol:		rgba(0 255 255 / 0.1); /* #LITE GREEN# (0 255 0 / 0.1) */
+
+/* WATCH */
+	--colvorschrift: 	rgb(255, 150, 255, 1);
+/* KARAOKE RANDOM */
+/*
+	--dotbgcol:				hsla(180 100% 75% / .75);
+	--dotptcol:				hsla(260 100% 75% / 1); 
+*/
+	--dotptcol:				rgba(255 255 255 / 1); /*bratblack;*/
+	--dotbgcol:				rgba(0 150 255 / 1);   /*bratlime;*/
+/* TRACE */
+	--traceon:				hsla(120 100% 50% / 0.5); /* GREEN */
+	--traceoff: 			hsla(0 100% 50% / 0.1); /* RED */
+
+/* DEBUG BOXES (RECPLAY) */
+	/* --DBborder: 3px; */
+}
+
+
+
+
+																  			/* CONTAINER-DIVS */
+																  	/* #CRITICAL# STACK-ORDER
+		/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+/* PAGE WRAPPER (TOUCH EVENT LISTENER) */
+#touchUIwrapper {
+	position: absolute;
+	display: flex;
+/* LINE ##73## */
+/*
+	height: 100vh;
+	width: 100vw;
+ */
+	height: 100%;
+	width: 100%;
+	justify-content: center;
+	align-items: center;
+	overflow: hidden;
+	touch-action: none;
+	border: 0px dashed yellow;
+}
+
+/* COMPUTE AND SET ELEMENT-ATTRIBUTES WIDTH OF VIEWBOX AND LENGTH OF LINES */
+/* FROM GLOBALS SCREENW/VW SCREENH/VH PER CALC (FONTH/SCREEN#H#*SCREEN#W#) */
+
+					/* FULL-WIDTH "SCHRIFTLINIEN" (EXTENDS "TYPEBOX")  */
+#rulerslayer {
+	visibility: visible;
+	position: absolute;
+	transform: rotate(var(--angle));
+	height: var(--layerHeight);
+	border: 0px dashed pink;
+}
+
+					/* TEMPLATE LAYER */
+					/* ###### SCALE WIDTH (PORT OR LAND) TO FIT-LARGEST-MEMBER ###### */
+#templatelayer {
+	position: absolute;
+	transform: rotate(var(--angle));
+	height: var(--layerHeight); 							
+	fill: none;
+	border: 0px dashed cyan;
+}
+
+					/* ##TBD## DUMMY */
+#sampleslayer {
+	position: absolute;
+	transform: rotate(var(--angle));
+	height: var(--layerHeight);
+	border: 0px dashed red;
+}
+
+					/* TRACE LAYER */
+					/* (STAYS SET TO ACTUAL DEVICE DIMENSIONS) */
+#tracelayer {
+	position: absolute;
+	height: 100vh;
+	width: 100vw;
+	border: 0px dashed lime;
+}
+
+					/* ELEMENT-FROM-POINT PROCESSING */
+#crawlerlayer {
+	position: absolute;
+	transform: rotate(var(--angle));
+	height: var(--layerHeight);
+	border: 0px dashed green;
+}
+
+					/* ##TBD## DUMMY */
+#vorschriftlayer {
+	position: absolute;
+	transform: rotate(var(--angle));
+	height: var(--layerHeight);
+	border: 0px dashed blue;
+}
+
+					/* (VISUAL INSPECTION */
+#controlptslayer {
+	position: absolute;
+	transform: rotate(var(--angle));
+	height: var(--layerHeight);
+	border: 0px dashed blue;
+}
+
+#outlineslayer {
+	position: absolute;
+	transform: rotate(var(--angle));
+	height: var(--layerHeight);
+	border: 0px dashed cyan;
+}
+
+#specialfxlayer {
+	position: absolute;
+	transform: rotate(var(--angle));
+	height: var(--layerHeight);
+	border: 0px dashed cyan;
+}
+
+
+
+
+/* = = = = = = = = = = = = = TYPEBOX WIDTH PER GLYPH FROM "FONTDATA" = = = = = = = = = = = = = = */
+/* = = = = = = = = = = = = = VERTICAL RULER DIMENSIONS #FIXED# FOR FONT = = = = = = = = = = = = */
+
+					/* TO COMPUTE SCALING AND COMPOSITING (MTBG) ONLY */
+.typebox {
+	visibility: hidden; 																																				/* ##WATCH ITEM## */
+}
+.typebox rect {
+	stroke: rgba(255 0 0 / .5);
+	stroke-width: 2px;
+	stroke-dasharray: 5px, 5px;
+}
+.typebox line {
+	stroke: rgba(255 0 0 / .5);
+	stroke-width: 1px;
+	stroke-dasharray: 5px, 5px;
+}
+
+
+					/* FOR "FULL WIDTH (!)SCHRIFTLINIEN" */
+					/* (ALLOW COLOR SETTING // FOR STROKE-WIDTH PRESERVE MINIMUM) */
+					/* ##WATCH ITEM## */
+.rulerline {
+	fill: none;
+	stroke: var(--basecol);
+	stroke-width: 8px;
+}
+					/* HTML VERTICAL POSITIONS ADJUSTED */
+					/* TOP EDGE +2PX BOTTOM EDGE -4PX TO AVOID DROP-OUT */
+.edge {
+	stroke: var(--rulerlinecol);
+	/* stroke-dasharray: 8px, 20px; */
+	/* visibility: hidden; */
+}
+.base {
+	stroke: var(--basecol);
+}
+
+
+
+
+
+																			/* TYPE DRAWING STYLES */
+		/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+		/* GLYPH */
+.templateglyph {
+	fill: none;
+	stroke: rgba(0 0 0 / .1);
+	stroke-width: var(--strokeweight); /* UNIT-LESS */
+	stroke-linecap: square;
+	stroke-linejoin: round;
+}
+
+		/* BEZIER-4-POINT-GROUPS ANCHORS/CONTROLS // DEBUGGING/VIZ ONLY */
+		/* IN LAYER "BEZIERPTSLAYER" GROUP "BEZIERPTS" */
+.anchor {
+	fill: none;
+	stroke: rgb(255, 0, 255, .25); /* SHOW A1===A2 LAYERED */
+	stroke-width: 2px;
+	/*stroke-dasharray: 2 2;*/
+	r: 5px;
+}
+.control {
+	fill: none;
+	stroke: lime;
+	stroke-width: 2px;
+	r: 5px;
+}
+
+					/* PATH-SAMPLES (OUTLINES) // DEBUGGING/VIZ ONLY */
+.sample {
+	fill: transparent;
+	stroke: rgba(255 0 255 / .2);
+	stroke-width: 3px;
+	/*stroke-dasharray: 1 1;*/
+}
+/* "STEP" (VISUALIZATION) */
+.sampledot {
+	fill: none;
+	stroke: rgba(0 0 255 / .5);
+	stroke-width: 2px;
+	r: 2px;
+	/*stroke-dasharray: 1 1;*/
+}
+/* NORMAL (VISUALIZATION) */
+.normline {
+	stroke: rgba(0 0 255 / .5);
+	stroke-width: 2px;
+	stroke-dasharray: 2 2;
+}
+/* OUTLINE FOR STEP (VISUALIZATION) */
+.outline {
+	fill: none;
+	stroke: rgba(0 255 255 / 1);
+	stroke-width: 2px;
+	stroke-dasharray: 2 3;
+}
+
+
+
+			/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+																			/* "C(RAWLER)EL(EMENT)" */
+/* TOUCH-IDENTIFYING ELEMENT (VIA GET-EL-FROM-POINT) */
+/* NAME CHANGED 18-AUG-24 TO REFLECT THAT ACTUAL EVENT-HANDLER IS ON "TOUCH_UI_WRAPPER" */
+
+/* (!)MUST HAVE FILL BUT SET "INVISIBLE"//##TBD## "TRANSPARENT" */
+.crawlelement {																																						
+	fill: transparent; /*rgba(255 255 0 / .33);*/
+	stroke: transparent; /* transparent; */ /* "YELLOW" DEBUG ONLY */
+	stroke-width: 1px;
+	/* stroke-dasharray: 1 1; */
+}
+
+
+			/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+																	/* STARTPOINTS/DIACRITICS // 23-MAR-23 */
+/* /!\ MUST HAVE FILL TO REGISTER */
+.startpoint {
+	fill: transparent; /*rgba(0 0 0 / 0);*/ 
+	stroke-width: 4px;
+	stroke-dasharray: 4 5;
+/* VAR NOT AVAILABLE FOR SOME REASON #TBD# // USING "NORMLEN" */
+	stroke: rgba(0 0 255 / 1);
+	/*r: 52px; //var(--strokeweight); // UNITLESS */
+}
+.startpoint:hover {
+	stroke: rgba(255 0 0 / 1);
+}
+
+
+.exitpoint {
+	fill: transparent; /*rgba(0 0 0 / 0);*/ 
+	stroke-width: 4px;
+	/* stroke-dasharray: 4 5; */
+	stroke: rgba(255 0 255 / .25);
+}
+.exitpoint:hover {
+	stroke: rgba(255 0 255 / .5);
+}
+
+
+.diacritter {
+	fill: transparent;
+	stroke-width: 4px;
+	/* stroke-dasharray: 4 5; */
+	stroke: rgba(0 0 255 / .5); /* BLUE NO DASH */
+}
+.diacritter:hover {
+	stroke-dasharray: none;
+	stroke: rgba(0 255 0 / .5); /* REDUNDANT MOUSE/PEN ONLY */
+}
+/* STYLE "DOT" IN TRACE-LAYER */
+/* ALSO NEEDED IN SAVEOUT-TEMPLATE */
+.diatrace {
+	fill: hsla(120 100% 50% / 0.5); /*var(--traceon);*/ /* STROKECOLOR */
+	/* r: calc(var(--traceweight) * 0.55)px; */
+	stroke: none;
+}
+
+
+			/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+																	/* TRACE "SPUR" */
+																	/* SVG-POLYLINE  */
+.trace {
+	fill: none;
+	stroke: hsla(0 0% 50% / 1); /* GRAY BUT NO TRANSPARENCY */
+	stroke-width: var(--traceweight); /* (UNITLESS!) */
+	stroke-linecap: round; /* butt square round */
+	stroke-linejoin: round; /* bevel miter round */
+}
+.trace .ontrack {
+	stroke: var(--traceon);
+}
+.trace .offtrack {
+	stroke: var(--traceoff);
+}
+
+
+			/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+																	/* ANIMATION LINE ##347## */
+
+/* (SHOW/TELL) POLYLINE */
+.vorschrift {
+	fill: none;
+	stroke: var(--colvorschrift); /* ANIM BTN COL */
+	stroke-width: var(--strokeweight);
+	stroke-linecap: round; /* butt square round */
+	stroke-linejoin: round; /* bevel miter round */
+}
+
+/* (DOT) CIRCLE */
+.dotpt {
+	/* fill: lime; */ /* rgba(0 255 100 / 1); */
+	fill: var(--dotptcol);
+	stroke: none;
+/* WITH UNIT IN CSS // WITHOUT (NUMBER) WITH/WITHOUT (STRING) UNIT IN JS-ATTRIBUTE */
+	r: 50px; 
+}
+
+.dotbg {
+	/*background-color: oklch(1 0.4 0);*/
+	/*background-color: orange;*/
+	background-color: var(--dotbgcol);
+}
+
+/* (COMET) CIRCLE */
+.cometpt {
+	fill: rgba(100 180 255 / 1); /* SKYBLUE */
+	stroke: none;
+/* WITH UNIT IN CSS // WITHOUT (NUMBER) WITH/WITHOUT (STRING) UNIT IN JS-ATTRIBUTE */
+	r: 50px; 
+}
+
+.cometbg {
+	/*background-color: oklch(1 0.4 270);*/ /* 0=MAGENTA 45=RED 90=YELLOW 135=GREEN 180=CYAN 270=SKYBLUE 315=PINK*/
+	background-color: rgba(200 225 255 / 1);
+	/* background-color: yellow; */
+	/*background-color: orange;*/
+	/*background-color: oklch(1 0.4 71);*/ /* ORANGE */
+}
+
+
+

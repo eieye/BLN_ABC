@@ -1,0 +1,320 @@
+/* BLN ABC 0.9 (beta) A Primer for basic literacy development | Ein "Vorkurs" zur Alphabetisierung in Deutsch als Zweitsprache
+ * Copyright (C) 2025 Jens Kreitmeyer <self@jenskreitmeyer.de>
+ * This file is part of BLN ABC
+ * (for the full length copyright notice see the HTML index file and "COPYING.txt")
+ */
+/* ##STYLES_FRAMEWORK## PART OF BLN ABC "STRESSTEST#04" (QUIZ) // 27-MAR-25 */
+/* !!"ROOT" IN "STYLESTOUCHRENDER" */
+
+
+
+/* FOR "SWITCH"-WIDGET */
+:root {
+	--unchecked: 			rgba(200, 200, 210, 1);
+	--checked: 				rgba(100, 255,  50, 1);
+	--thumb:					rgba(150, 150, 170, 1);
+	--dbb:						0px; /* TEMP DEBUG SWITCH ONLY */
+}
+
+
+
+																  				/* APP-WIDE */
+		/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+* {
+	box-sizing: border-box;
+}
+
+body {
+	margin: 0px;
+	padding: 0px;
+	background-color: rgba(255 200 200 / .1);
+					/* THIS TXT IN (!)POPUPS USING RELATIVE SIZE */
+	font-size: 12px;
+	font-family: 'Menlo', system-ui, sans-serif;
+	font-weight: 400; 																																	/* 700 IS SEMIBOLD */
+	letter-spacing: 0.5px;
+	user-select: none;
+	overflow: clip; /* (250210) */
+}
+
+
+																			/* SELECTLIST OVERLAY */
+																				/* (PROTOTYPE) */
+																				/* PROXIE "SWIPER" */
+		/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+.overlay {
+	position: fixed; 																															/* /!\ #ONLY# THIS ENABLES HANDLERS ON OVERLAY */
+	top: 0; right: 0; bottom: 0; left: 0;
+	/* z-index: 0; */ 																														/* /!\ REDUNDANT (IS BY POSITION IN HTML-STACK)*/
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: rgba(60 60 60 / .5); 																				/* DIMMER */
+	border: 0px dotted red;
+	touch-action: none;
+}
+
+										/* CHAIN CLASSLIST // TOGGLE SHOW/HIDE (250214 19:21) */
+												
+/* #TEMP# HILITE STEALTHY WRONG FORMATTING */
+ /* "HIDE" REPLACED BY "HIDDEN" REPLACED BY "DISPLAYNONE" */
+.hide {
+	border: 10px dashed red;
+}
+
+/* NAME CHANGED FROM "HIDDEN" TO "DISPLAYNONE" */
+/* SETING "NAMEDNODEMAP" !!ATTRIBUTE !!STYLE=DISPLAY NONE */
+/* (ATTRIBUTE "VISIBILITY"=!!HIDDEN IS STILL USED IN CRAWLER */
+.displaynone {
+	display: none;
+}
+
+.nodim {
+	background-color: rgba(60 60 60 / 0); 																				/* NO DIMMER */
+}
+
+
+
+																					/* SELECTLIST (OPTIONS) */
+		/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+/* (DYNAMIC) GRAPHEME-INVENTORY LISTING */
+.optionbox {
+	background-color: rgba(255 255 255 / .95); /* MSG */
+	border: 3px dashed yellow;
+																	/* LESS IS MORE FOR MOBILE */
+	padding: 25px 10px 25px 10px; /* TRBL */
+	margin: 0px 25px 0px 25px; /* NOT EFFECTIVE UNLESS WIDTH 100% */
+	border-radius: 3px;
+	cursor: default;
+
+	display: flex; 
+	width: 60vw;
+/* ONLY HEIGHT-LIMIT ENABLES VERTICAL OVERFLOW/SCROLLING */
+/* BUT #TBD# SHOULD BE SET TO HEIGHT OF CONTAINED ITEMS IF LESS THAN VIEW HEIGHT */
+	height: 90vh;
+
+	/*user-select: none;*/ /* NO TXT HI-LIGHTING */
+	/* touch-action: none; */
+	overflow-y: scroll;
+}
+.optionlist {
+	/* width: 200px; */
+	border: 2px dashed cyan;
+}
+/* LISTITEM "BUTTON" */
+.option {
+	border: 2px solid rgba(100 100 100 / 1);
+	border-radius: 25px; /* 10px; */
+	height: 50px;
+	padding: 10px 10px 10px 10px;
+	margin: 5px 0px 0px 5px;
+	font-size: 1rem; /* =16px */
+	line-height: 1.25rem; /* =20px */
+	background: rgba(255 255 255 / 1);
+}
+
+
+
+																  	/* CUSTOM ALERT OVERLAY */
+		/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+.customalertbox {
+	border: 0px solid yellow;
+	padding: 1.5em 1.5em 1.5em 1.5em; /* TRBL */
+	border-radius: 20px;
+	background-color: rgba(50 50 50 / .05);
+ 	display: flex;
+ 	flex-direction: column;
+  align-items: center;
+  justify-content: center;
+/* FONT OVERRIDING "BODY" */
+  font-family: system-ui;
+  font-size: 1.5em;
+  line-height: 1.5em;
+}
+
+/* ##TEMP## ADDED FOR (SINGULAR) USE */
+/* FOR INITIAL SETTING "ALERTS ON/OFF" */
+/* (110325) GLOBAL USE AS "MSGCONTAINER" */
+.init {
+	border: 0px dashed rgba(50 150 255 / 1); /* LIGHTER BLUE */
+	background-color: white;
+	color: rgba(0 0 0 / 0.7);
+}
+
+.alertbtn {
+	padding: 10px 25px 10px 25px;
+	margin: 15px 15px 15px 15px;
+	border: 2px;
+	border-style: solid;
+	border-radius: 40px;
+	line-height: 1.75em;
+}
+
+.green {
+	border-color: rgba(0 225 0 / 1); /* lime; */
+	color: rgba(0 225 0 / 1); /* lime; */
+}
+.red {
+	border-color: rgba(255 75 0 / 1);
+	color: rgba(255 75 0 / 1);
+}
+/* NEW 110325 // BTN "CLOSE" IN MSGCONTAINER */
+.blue {
+	border-color: rgba(0 100 255 / 1);
+	color: rgba(0 100 255 / 1);
+}
+
+
+																	/* SWITCH ("DONT SHOW AGAIN") */
+																			/* ADDED 23-MAR-25 */
+		/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+.switchcontainer {
+	width: 100%;
+	display: flex;
+	align-items: left;
+	border: var(--dbb) dashed yellow;
+}
+.switchtrack {
+	box-sizing: content;													/* STROKE OUTSIDE (GLOBAL IS INSIDE) */
+	float: right;
+	margin-top: 4px;															/* VERTICAL-ALIGN WITH TEXT */
+	height: 40px;
+	width: 80px;
+	border-radius: 20px;													/* PRESERVE SEMI-CIRCULAR CAPS */
+	background-color: var(--unchecked);
+	transition: 0.5s; /* DEFAULT = ALL */
+}
+.switchthumb {
+	box-sizing: border-box;
+	height: 34px;
+	width: 34px;
+	margin: 3px; /* SUM = 40PX */
+	border-radius: 17px;
+	background-color: var(--thumb);
+	transition: transform 0.2s;
+			/* cubic-bezier(0.32, 0.58, 0.12, 0.97); */
+			/* ease-in-out */
+}
+.move {
+	transform: translateX(40px);
+}
+.hilite {
+	background-color: var(--checked);
+}
+
+
+
+
+																  		/* CONTAINERS MENU */
+		/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+/* ROW IN MENU FIXED HEIGHT (GRID) */
+.nav {
+	position: absolute;
+	left: 0px;
+	width: 100vw;
+	height: 20vw;
+	border: 0px solid yellow;
+	display: flex;
+	flex-direction: row;
+	/* touch-action: none; */
+}
+.main {
+	border: 0px solid yellow;
+}
+.more {
+	border: 0px solid yellow;
+	/* left: calc(100vw - 0px); */ /* USING "BLANKS" */
+}
+
+
+
+/* (250212) BKUP PORT/LAND ORIENTATION FOR MENU (IF NEEDED IN STEPPER) */
+
+/*
+gui_frame {
+	position: absolute;
+	border: 1px solid yellow;
+}
+.port {
+	transform: rotate(var(--angle)) translate(0, 0);
+}
+.land {
+	transform-origin: top left;
+	transform: translate(100vw) rotate(var(--angle));
+}
+*/
+
+
+
+
+
+/* ----------------------------------- ICONS (SVG-ART) -------------------------------------- */
+/* ROUNDED BORDER */
+.icon-border {
+	width: 20vw;
+	height: 20vw;
+	fill: none;
+	stroke: rgba(0 0 0 / 0); /* 0.2 */
+	stroke-width: 4px;
+}
+/* DRAWING GROUP */
+.icon-group {
+	opacity: 0.6;
+}
+
+.icon-stroke {
+	fill: none;
+	stroke: rgba(0 0 0 / 1);
+	stroke-width: 4px;
+	stroke-linecap: round;
+	stroke-linejoin: round;
+}
+
+/* SPACER GRID-UNIT */
+.blank {
+	width: 20vw;
+	height: 20vw;
+	border: 0px solid rgba(255 0 0 / .2);
+	background-color: rgba(255 0 0 / 0); /* 0.01 */
+}
+.blanktoggle {
+	width: 20vw;
+	height: 20vw;
+	border: 0px dotted rgba(255 0 255 / .5); /* 1px */
+	background-color: rgba(255 0 0 / 0); /* 0.01 */
+}
+
+
+
+
+																  		/* BUTTON ID="LIVEBTN-UCLC" */
+		/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+/* EXTENDS "ICON-BOX" */
+.live {
+	stroke-width: 32px; /* #TBD# CALC-VAR FOR RUNTIME SCALING FOR 1160x1160PX */
+	stroke: rgba(255 0 255 / 0.05); /* DEBUG ONLY */
+}
+
+/* EXTENDS "ICON-STROKE */
+.chars {
+	stroke-width: 69px; /* #TBD# CALC-VAR FOR RUNTIME SCALING FOR 1160x1160PX */
+}
+
+.minipreview {
+	border: 0px dotted red;
+	display: flex;
+	flex-direction: row;
+}
+
+.inner {
+	position: relative;
+	top: -18.5vw;
+	padding: 3.75vw;
+	opacity: 0.6;
+}
+
+
+
+

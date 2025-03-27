@@ -1,0 +1,76 @@
+/* BLN ABC 0.9 (beta) A Primer for basic literacy development | Ein "Vorkurs" zur Alphabetisierung in Deutsch als Zweitsprache
+ * Copyright (C) 2025 Jens Kreitmeyer <self@jenskreitmeyer.de>
+ * This file is part of BLN ABC
+ * (for the full length copyright notice see the HTML index file and "COPYING.txt")
+ */
+/* ##STYLES_MINIPREVIEW## PART OF BLN ABC "STRESSTEST#04" (QUIZ) // 27-MAR-25 */
+/* DO #NOT# CHANGE VAR-NAMES IN CLASS "PREVIEWCONTAINER" */
+/* STYLERULES ARE ACCESSED FROM "RENDER_MINIPREVIEW" */
+
+/* /!\ DEFAULT FOR "PREVIEWCONTAINER" IS "SINGLE/ONE-LINE" */
+
+
+/* ADD TO ROOT (LOCAL) */
+:root {
+	--mtbgcolumn: column;
+	--singlerow: row;
+	--mtbgpadding: 3vw; 		 /* (APPLIES TO COLS TOP/BOTTOM) */
+	--singlepadding: 4.75vw; /* (APPLIES TO ROW TOP/BOTTOM) */
+	--dbbtnborder: 0px;			 /* DEBUGGING ONLY */
+}
+
+
+/* STYLES SINGLE GLYPH */
+			/* EXTENDS "ICON-BORDER" */
+.live {
+	stroke-width: 32px;
+	stroke: rgba(255 0 0 / 0.1); /* DEBUG ONLY */
+}
+
+			/* EXTENDS "ICON-STROKE" */
+.chars {
+	stroke-width: 69px;
+}
+
+.charbox {
+	flex-shrink: 3; /* NUMBER OF ITEMS(!) */
+	border: var(--dbbtnborder) dashed cyan;
+}
+
+			/* CONTAINER FOR COMPOSITE GLYPH-PAIR */
+			/* SIZE IDENTICAL TO "BTN" AND "UNIT" */
+.previewcontainer {
+	display: flex;
+	flex-direction: var(--singlerow);
+	justify-content: center;
+	border: var(--dbbtnborder) dashed red;
+	height: 20vw;
+
+			/* POSITIONING GLYPH-PAIR INSIDE PARENT-DIV "BTNUCLC" */
+			/* ("PREVIEWCONTAINER" IS IN EFFECT AN OVERLAY ON ICON-BORDER) */
+			/* "POSITION RELATIVE" DOUBLES HEIGHT OF "BTNUCLC" */
+			/* THIS "INVISIBLE OVERFLOW" GETS "NEUTRALIZED" BY PLACEMENT AT SCREEN-BOTTOM */
+	position: relative;
+	top: -20.75vw; 																																								/* (-0.75 COMPENSATION FOR ICON-BORDER THICKNESS) */
+	padding: var(--singlepadding) 1vw var(--singlepadding) 1vw;
+	opacity: 0.6;
+}
+
+			/* SVG-DIV // PX==ACTUAL CLIENT SCALE */
+.minispacer {
+	width: 4px; 																																									/* IS EFFECTIVE WORDPSPACE FOR SINGLE */
+	height: 0px; 																																									/* IS EFFECTIVE LINESPACE FOR COMPOSITE */
+	border: 0px dashed yellow;
+}
+
+																			/* ##WATCH ITEM## DELETE */
+/* DEBUGGING BORDERS */
+			/* BOX SIZING SVG TO CHARACTER WIDTH */
+.bgreen {
+	border: var(--dbbtnborder) solid lime;
+}
+
+.bgblue {
+	border: var(--dbbtnborder) dashed blue;
+}
+
