@@ -2,7 +2,7 @@
 
 # BLN ABC (Berlin ABC) 
 ## eine Webapp zur Grundalphabetisierung auf Smartphones
-BLN ABC verfolgt das Konzept eines "Primers": vorbereiten, unterstützen, aufholen, in Alphakursen (Deutsch als Zweitsprache/ZweitschriftlernerInnen) auf dem Sprung von "A0" zu A1.
+[BLN ABC](https://jenskreitmeyer.de/alphasprint/STRESSTEST/pipeline_index_stresstest.html) verfolgt das Konzept eines "Primers": vorbereiten, unterstützen, aufholen, in Alphakursen (Deutsch als Zweitsprache/ZweitschriftlernerInnen) auf dem Sprung von "A0" zu A1.
 
 Die App berücksichtigt den kompletten deutschen Phonem/Graphembestand, d.h. auch alle mehrteiligen Basisgrapheme und Glyphenvarianten.
 Interaktive, multimodale Übungen sollen helfen die Laut-Buchstabenentsprechung kognitiv zu automatisieren.
@@ -22,7 +22,11 @@ Die Konfigurierbarkeit der App wird laufend ausgebaut: Buchstaben oder Buchstabe
 
 Die App läuft webbasiert im Smartphone-Browser (vorzugsweise Firefox/Android). 
 ## Demo
-[https://jenskreitmeyer.de/alphasprint/STRESSTEST/pipeline_index_stresstest.html](https://jenskreitmeyer.de/alphasprint/STRESSTEST/pipeline_index_stresstest.html)
+[https://jenskreitmeyer.de/alphasprint/INTEGRATION/pipeline_index.html](https://jenskreitmeyer.de/alphasprint/STRESSTEST/pipeline_index_stresstest.html)
+![INTEGRATION_50](https://github.com/user-attachments/assets/61ecc21f-3e22-4b65-9f6d-b1cae73f296e)
+
+
+
 
 Auf die App kann frei verlinkt werden oder sie kann auf eigenen Servern angeboten werden (bei lokalem Aufruf von "localhost"). [Quelldateien](https://github.com/eieye/BLN_ABC) können unter GPL-3.0 Lizenz modifiziert werden.
 
@@ -31,6 +35,9 @@ Das Projekt BLN ABC wurde von September 24 bis Februar 25 durch das BMBF in [Run
 
 
 English text to follow soon!
+
+
+
 
 
 
