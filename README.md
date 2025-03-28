@@ -23,13 +23,13 @@ Die Konfigurierbarkeit der App wird laufend ausgebaut: Buchstaben oder Buchstabe
 Die App läuft webbasiert im Smartphone-Browser (vorzugsweise Firefox/Android). 
 ## Demo
 ![INTEGRATION_50](https://github.com/user-attachments/assets/3c8d5b15-986d-49be-ab15-113459bd3776)
-[https://jenskreitmeyer.de/alphasprint/INTEGRATION/pipeline_index.html](https://jenskreitmeyer.de/alphasprint/STRESSTEST/pipeline_index_stresstest.html)
+[https://jenskreitmeyer.de/alphasprint/INTEGRATION/pipeline_index.html](https://jenskreitmeyer.de/alphasprint/INTEGRATION/pipeline_index.html)
 
 
 
 
 
-Auf die App kann frei verlinkt werden oder sie kann auf eigenen Servern angeboten werden (bei lokalem Aufruf von "localhost"). [Quelldateien](https://github.com/eieye/BLN_ABC) können unter GPL-3.0 Lizenz modifiziert werden.
+Auf die App kann frei verlinkt werden oder sie kann auf eigenen Servern angeboten werden (bei lokalem Aufruf launch von "localhost"). [Quelldateien](https://github.com/eieye/BLN_ABC) können unter GPL-3.0 Lizenz modifiziert werden.
 
 Die App ist FOSS (free and open source software) und nicht kommerziell.
 Das Projekt BLN ABC wurde von September 24 bis Februar 25 durch das BMBF in [Runde 16 des Prototype Fund](https://prototypefund.de/project/bln-abc/) (Open Knowledge Foundation) gefördert
