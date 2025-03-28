@@ -11,8 +11,8 @@ Sofortiges Feedback zu (Nach)schreiben und (Nach)sprechen macht Vergleich und Ko
 BLN ABC ist damit auch für das Selbststudium geeignet oder kann für unbegleitete Übungen und (Haus)aufgaben eingesetzt werden.
 
 Der App "Kern" zu den Grundfertigkeiten in Lesen/Schreiben/Hören/Sprechen wird durch ein (noch experimentelles) Modul [Stepper](https://jenskreitmeyer.de/alphasprint/SILBENSCHIEBER/audioautocomp.html) – in Anlehnung an "Silbenschieber" oder "Silbentreppen" – erweitert.
-Dieses Modul bildet einen Grundwortschatz ([Lexikon](https://github.com/eieye/searchable_speaking_lexicon)) von ca. 2000 Wörtern als lautlichen/alphabetischen Stammbaum ab.
-Stufenweise, akkumulierend, können alle (vorkommenden) Wörter durch Auswahl jeweils eines weiteren Buchstaben/Graphems lautlich und alphabetisch "zusammengesetzt" werden, und auf jeder Stufe angehört (und nachgesprochen) werden.
+Dieses Modul bildet einen Grundwortschatz ([Lexikon](https://github.com/eieye/searchable_speaking_lexicon)) von ca. 2000 Wörtern als lautlichen/alphabetischen Stammbaum ab.<br>
+Stufenweise, akkumulierend, können alle (vorkommenden) Wörter durch Auswahl jeweils eines weiteren Buchstaben/Graphems lautlich und alphabetisch "zusammengesetzt" werden, und auf jeder Stufe angehört (und nachgesprochen) werden.<br>
 Auf explorative Weise soll so Intuition für Silben- und Wortbildung (Vokalqualität und -länge, u.a. auch Reduktionssilben, Schwa/Tiefschwa) entwickelt und die Progression von der alphabetischen zur Wortebene gefördert werden.
 
 Die Konfigurierbarkeit der App wird laufend ausgebaut: Buchstaben oder Buchstabenverbindungen sollen didaktisch frei zu Übungsgruppen zusammengestellt werden können (auch in Anpassung an die Einführung in verschiedenen Lehrwerken). Lernstandsdokumentation ("Portfolio") soll durch Statistik und mit Abspeichern von Übungsergebnissen erweitert werden. Der "Stepper" soll an bestehende online (Bild)wörterbücher angebunden werden.
@@ -23,7 +23,6 @@ Die Konfigurierbarkeit der App wird laufend ausgebaut: Buchstaben oder Buchstabe
 Die App läuft webbasiert im Smartphone-Browser (vorzugsweise Firefox/Android). 
 ## Demo
 ![INTEGRATION_50](https://github.com/user-attachments/assets/3c8d5b15-986d-49be-ab15-113459bd3776)
-
 [https://jenskreitmeyer.de/alphasprint/INTEGRATION/pipeline_index.html](https://jenskreitmeyer.de/alphasprint/STRESSTEST/pipeline_index_stresstest.html)
 
 
@@ -37,6 +36,8 @@ Das Projekt BLN ABC wurde von September 24 bis Februar 25 durch das BMBF in [Run
 
 
 English text to follow soon!
+<br> 
+<br>
 ## 
 
   
