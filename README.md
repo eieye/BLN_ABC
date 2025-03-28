@@ -33,3 +33,4 @@ Das Projekt BLN ABC wurde von September 24 bis Februar 25 durch das BMBF in [Run
 English text to follow soon!
 
 
+[logo_banderole.pdf](https://github.com/user-attachments/files/19509314/logo_banderole.pdf)
