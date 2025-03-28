@@ -10,7 +10,7 @@ Interaktive, multimodale Übungen sollen helfen die Laut-Buchstabenentsprechung 
 Sofortiges Feedback zu (Nach)schreiben und (Nach)sprechen macht Vergleich und Korrektur von Schreibmotorik und Phonetik/Artikulation möglich. Durch einen zusätzlichen "Quiz"-Modus wird Gelerntes aktiviert.
 BLN ABC ist damit auch für das Selbststudium geeignet oder kann für unbegleitete Übungen und (Haus)aufgaben eingesetzt werden.
 
-Der App "Kern" zu den Grundfertigkeiten in Lesen/Schreiben/Hören/Sprechen wird durch ein (noch experimentelles) Modul [Stepper](https://jenskreitmeyer.de/alphasprint/SILBENSCHIEBER/audioautocomp.html) – in Anlehnung an "Silbenschieber" oder "Silbentreppen" – erweitert.
+Der App "Kern" zu den Grundfertigkeiten in Lesen/Schreiben/Hören/Sprechen wird durch ein (noch experimentelles) Modul [Stepper](https://jenskreitmeyer.de/alphasprint/SILBENSCHIEBER/audioautocomp.html) – in Anlehnung an "Silbenschieber" oder "Silbentreppen" – erweitert.<br>
 Dieses Modul bildet einen Grundwortschatz ([Lexikon](https://github.com/eieye/searchable_speaking_lexicon)) von ca. 2000 Wörtern als lautlichen/alphabetischen Stammbaum ab.<br>
 Stufenweise, akkumulierend, können alle (vorkommenden) Wörter durch Auswahl jeweils eines weiteren Buchstaben/Graphems lautlich und alphabetisch "zusammengesetzt" werden, und auf jeder Stufe angehört (und nachgesprochen) werden.<br>
 Auf explorative Weise soll so Intuition für Silben- und Wortbildung (Vokalqualität und -länge, u.a. auch Reduktionssilben, Schwa/Tiefschwa) entwickelt und die Progression von der alphabetischen zur Wortebene gefördert werden.
