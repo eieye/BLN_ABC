@@ -22,7 +22,8 @@ Die Konfigurierbarkeit der App wird laufend ausgebaut: Buchstaben oder Buchstabe
 
 Die App läuft webbasiert im Smartphone-Browser (vorzugsweise Firefox/Android). 
 ## Demo
-![[https://github.com/user-attachments/assets/b01b9982-01e9-436c-9085-58a71a5793a8](https://github.com/user-attachments/assets/b01b9982-01e9-436c-9085-58a71a5793a8)
+![INTEGRATION_50](https://github.com/user-attachments/assets/3c8d5b15-986d-49be-ab15-113459bd3776)
+
 [https://jenskreitmeyer.de/alphasprint/INTEGRATION/pipeline_index.html](https://jenskreitmeyer.de/alphasprint/STRESSTEST/pipeline_index_stresstest.html)
 
 
@@ -36,7 +37,9 @@ Das Projekt BLN ABC wurde von September 24 bis Februar 25 durch das BMBF in [Run
 
 
 English text to follow soon!
+## 
 
+  
 
 
 
