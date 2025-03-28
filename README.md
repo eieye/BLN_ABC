@@ -22,8 +22,9 @@ Die Konfigurierbarkeit der App wird laufend ausgebaut: Buchstaben oder Buchstabe
 
 Die App läuft webbasiert im Smartphone-Browser (vorzugsweise Firefox/Android). 
 ## Demo
+![INTEGRATION_50](https://github.com/user-attachments/assets/b01b9982-01e9-436c-9085-58a71a5793a8)
 [https://jenskreitmeyer.de/alphasprint/INTEGRATION/pipeline_index.html](https://jenskreitmeyer.de/alphasprint/STRESSTEST/pipeline_index_stresstest.html)
-![INTEGRATION_50](https://github.com/user-attachments/assets/61ecc21f-3e22-4b65-9f6d-b1cae73f296e)
+
 
 
 
